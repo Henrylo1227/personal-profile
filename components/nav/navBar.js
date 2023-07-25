@@ -8,9 +8,9 @@ const navPageList = [
 
 export default function navBar () {
     return (
-        <div className='flex justify-between w-full fixed bg-dark-grey '>
+        <div className='flex justify-between w-full fixed bg-dark-grey z-50'>
             <NavHomeBtn/>
-            <div className='flex justify-between min-w-fit'>
+            <div className='flex justify-between min-w-fit mr-[5%]'>
                 {navPageList.map((navPage)=>{
                     const {linkRef, navText} = navPage;
                     return(

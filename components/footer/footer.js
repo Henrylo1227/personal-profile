@@ -13,7 +13,7 @@ export default function Footer() {
     
 
     return (
-        <div className="flex justify-center items-center flex-col bg-dark-grey">
+        <section className="flex justify-center items-center flex-col bg-dark-grey">
             <div className="flex bg-white w-[70%] h-[1px] mt-8"></div>
             <div className="flex text-center text-2xl py-5">
                 <div className={limelight.className}>Henry LO</div>
@@ -30,6 +30,6 @@ export default function Footer() {
                         })}
                 </div>
             <div className="flex bg-white w-[70%] h-[1px] mb-8"></div>
-        </div>
+        </section>
     );
 }
