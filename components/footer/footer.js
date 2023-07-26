@@ -19,13 +19,15 @@ export default function Footer() {
                 <div className={limelight.className}>Henry LO</div>
             </div>
 
-            <div className=" flex absolute right-[20%] justify-between w-20">
+            <div className=" flex absolute right-[20%]">
                     {externalLinks.map( (links) => {
                         const {imgSrc, url} = links;
                         return (
-                            <Link href={url}>
-                                <Image priority src={imgSrc} width={32} height={32}/> 
-                            </Link>
+                            <div className="relative h-5 w-5 mx-0.5 md:h-7 md:w-7 md:mx-3">
+                                <Link href={url}>
+                                    <Image src={imgSrc} fill={true}/> 
+                                </Link>
+                            </div>
                             )
                         })}
                 </div>
