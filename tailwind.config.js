@@ -26,7 +26,22 @@ module.exports = {
 
     backgroundImage: {
       'homePage': './public/images/homePage/homeBg.png',
+    },
+
+    extend: {
+
+      keyframes: {
+        vExtend: {
+          '0%': { height: '0%' },
+          '100%': { height: '100%'}
+        } 
+      },
+
+      animation: {
+        'ease-in': 'vxtend 1s',
+      }
     }
   },
+
   plugins: [],
 }
