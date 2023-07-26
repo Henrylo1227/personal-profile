@@ -25,7 +25,6 @@ module.exports = {
     },
 
     backgroundImage: {
-      'homePage': './public/images/homePage/homeBg.png',
     },
 
     extend: {

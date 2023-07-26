@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Background() {
     return (
-        <div className="absolute w-full h-full top-5">
+        <div className="block absolute h-screen w-screen top-4 z-0">
             <Image src='/images/homePage/profile-bg.jpeg' fill={true}
                 className=" object-cover brightness-[60%]"
             />
