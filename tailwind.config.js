@@ -6,27 +6,6 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
-    },
-
-    colors: {
-      'primary': '#FFE500',
-      'white': '#FFFFFF',
-      'black': '#000000',
-      'grey': '#646669',
-      'grey-light': '##888888',
-      'dark-grey': '#323437',
-      'purple-light': '#E09EFF',
-      'purple-dark': '#9440FF',
-    },
-
-    backgroundImage: {
-    },
-
     extend: {
 
       keyframes: {
@@ -36,9 +15,23 @@ module.exports = {
         } 
       },
 
-      animation: {
-        'ease-in': 'vxtend 1s',
-      }
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+
+      colors: {
+        'primary': '#FFE500',
+        'white': '#FFFFFF',
+        'black': '#000000',
+        'grey': '#646669',
+        'grey-light': '#D9D9D9',
+        'dark-grey': '#323437',
+        'purple-light': '#E09EFF',
+        'purple-dark': '#9440FF',
+      },
+
     }
   },
 

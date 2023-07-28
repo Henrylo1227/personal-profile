@@ -1,7 +1,7 @@
 import homePage from '../../../pageData/homePage.json';
 import { Limelight } from 'next/font/google';
-import DiscoverMeBtn from './discoverMeBtn';
-import Background from './background';
+import DiscoverMeBtn from './__components/discoverMeBtn';
+import Background from './__components/background';
 
 const limeLight = Limelight({ subsets: ['latin'], weight: '400'});
 
@@ -10,7 +10,7 @@ export default function PersonalDescription() {
   const { heading, subHeading, text } = content.description;
 
   return (
-    <section id='personal-description-section'>
+    <section id='personal-description'>
       {/* Section Screen */}
       <div className="block h-screen w-screen items-center bg-grey">
              {/* background */}
