@@ -16,7 +16,7 @@ export default function ProjectCard( {card} ) {
             {/* Card Wrapper */}
             <div className="flex h-full flex-col items-center">
                 <div className="h-full w-full items-center">
-                    <div className="relative h-36 w-full">
+                    <div className="relative h-36 w-full md:h-52">
                         <Image src='/images/projects/templateProjectPic.png'
                             fill={true}
                             className=" object-cover rounded-t-2xl"
@@ -27,16 +27,16 @@ export default function ProjectCard( {card} ) {
                             {projectName}
                         </div>
                     </div>
-                    <div className="text-sm my-2 mx-4 italic">
+                    <div className="text-sm my-2 mx-4 italic md:mx-8">
                         <div className={reemKufi.className}>
                             {description}
                         </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex mx-4 flex-wrap md:mx-8">
                         <TechStackView techStackList={techStack}/>
                     </div>
                 </div>
-                <div className="flex justify-center relative">
+                <div className="flex justify-center relative bottom-4">
                 <PrimaryBtnSm>learn more</PrimaryBtnSm>
             </div>
             </div>

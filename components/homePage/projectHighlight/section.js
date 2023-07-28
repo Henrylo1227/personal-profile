@@ -1,6 +1,7 @@
 import homePage from '../../../pageData/homePage.json';
 import { Inter } from 'next/font/google';
 import ProjectCardGrp from './__components/projectCardGrp';
+import Link from 'next/link';
 
 const inter700 = Inter({subsets: ['latin'], weight: '700'});
 const inter400 = Inter({subsets: ['latin'], weight: '400'});
@@ -22,10 +23,12 @@ export default function ProjectHighlight() {
                         </div>
                     </div>
                     {/* Section Subheading */}
-                    <div className='text-sm text-gray-700 md:text-4xl md:-tracking-[0.125rem]' >
-                        <div className={inter400.className}>
-                            {subHeading}
-                        </div>
+                    <div className='flex justify-center text-sm text-gray-700 md:text-4xl md:-tracking-[0.125rem] underline' >
+                        <Link href='/project'>
+                            <div className={inter400.className}>
+                                {subHeading}
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 {/* highlighted project cards */}
