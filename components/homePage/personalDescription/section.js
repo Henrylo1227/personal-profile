@@ -17,7 +17,7 @@ export default function PersonalDescription() {
              <Background/>
                  
         {/* text and button container */}
-        <div className='description-container relative top-1/4 p-3 md:top-1/3 md:left-[15%] z-10'>
+        <div className='description-container w-fit relative top-1/4 p-3 md:top-1/3 md:left-[15%] z-10'>
           {/* Name */}
           <div className='text-5xl my-2'>
             <h1 className={limeLight.className}>{heading}</h1>

@@ -4,6 +4,7 @@ import { RxCross1 } from 'react-icons/rx';
 import NavBtn from './navBtn';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const navPageList = [ 
     {linkRef: '/project', navText: 'Project',},
@@ -13,6 +14,8 @@ const navPageList = [
 export default function NavBtnGrp() {
 
     const [isExtendMenu, setIsExtendMenu] = useState(false);
+    const pathname = usePathname();
+
 
     const onExtendMenu = () => {
         setIsExtendMenu(true);
@@ -42,19 +45,23 @@ export default function NavBtnGrp() {
                     <div className='flex h-full flex-col justify-between items-center pb-2' onClick={onCollapesMenu}>
                         {navPageList.map((navPage, index)=>
                         <li key={index} className='list-none'>
-                            <NavBtn linkRef={navPage.linkRef}>{navPage.navText}</NavBtn>
+                            <NavBtn linkRef={navPage.linkRef} isCurrent={false}>{navPage.navText}</NavBtn>
                          </li>)}
                     </div>
                 </div>
             </div>
 
             {/* Static nav buttons */}
-            <div className='hidden md:flex'>
+            <div className='hidden md:flex mr-3'>
                 <div className='flex justify-between flex-row'>
-                    {navPageList.map((navPage, index)=> 
-                        <li key={index} className='list-none'>
-                            <NavBtn linkRef={navPage.linkRef}>{navPage.navText}</NavBtn>
-                         </li>)}
+                    {navPageList.map((navPage, index)=> {
+                        const isCurrent = (navPage.linkRef === pathname);
+                        return(
+                            <li key={index} className='list-none'>
+                                <NavBtn linkRef={navPage.linkRef} isCurrent={isCurrent} >{navPage.navText}</NavBtn>
+                            </li>
+                        );
+                    })}
                 </div>
             </div>
 

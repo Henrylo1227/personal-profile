@@ -11,7 +11,6 @@ export const metadata = {
     description: 'Reach out and contact Henry',
 }
 
-
 const ContactMe = () => {
 
     async function handleSubmit(e) {
@@ -32,20 +31,22 @@ const ContactMe = () => {
                         {/* Name Text Input*/}
                         <div className='flex'>
                             <div className='flex flex-col'>
-                                <label className='text-xl md:text-2xl'>First Name:</label>
+                                <label className='block text-xl md:text-2xl'>First Name:</label>
                                 <input className='w-[80%] mr-3 px-2 py-1 md:text-2xl' type='text' id='first-name' name='first-name' required/>
                             </div>
                             <div className='flex flex-col'>
-                                <label className='text-xl md:text-2xl'>Last Name:</label>
+                                <label className='block text-xl md:text-2xl'>Last Name:</label>
                                 <input className='w-[80%] px-2 py-1 md:text-2xl' type='text' id='last-name' name='last-name' required/>
                             </div>
                         </div>
+
                         {/* Email Text Input */}
                         <label className='mt-2 text-xl md:text-2xl md:mt-4'>Email:</label>
                         <input className='px-2 py-1 md:text-2xl' type='email' id='email' name='email' required/>
+
                         {/* Message Text Input */}
                         <label className='mt-2 text-xl md:text-2xl md:mt-4'>Message:</label>
-                        <textarea className='px-2 py-1 md:text-2xl' type='text' id='message' name='message' required/>
+                        <textarea className='px-2 py-1 md:text-2xl h-16 md:h-32' type='text' id='message' name='message' required/>
                         
                         {/* Send button */}
                         <div className=' self-end mt-2 md:mt-10'>
