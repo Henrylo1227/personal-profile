@@ -18,9 +18,9 @@ export default function ProjectHighlight() {
                 <div className='relative top-[10%] flex text-center item-center flex-col'>
                     {/* Section Heading */}
                     <div className='text-4xl py-2 -tracking-[0.125rem] bg-gradient-to-r from-purple-dark to-purple-light text-transparent bg-clip-text md:text-7xl md:py-5 md:tracking-[0.2rem]'>
-                        <div className={inter700.className}>
+                        <h1 className={inter700.className}>
                             {heading}
-                        </div>
+                        </h1>
                     </div>
                     {/* Section Subheading */}
                     <div className='flex justify-center text-sm text-gray-700 md:text-4xl md:-tracking-[0.125rem] underline' >

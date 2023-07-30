@@ -12,14 +12,15 @@ export default function ProjectCard( {card} ) {
 
 
     return (
-        <div id={projectName} className="block min-w-[250px] bg-white my-10 mx-5 rounded-2xl shadow-lg md:h-[30rem] md:w-[24rem]">
+        <div id={projectName} className="block min-w-[250px] bg-white my-10 mx-5 rounded-2xl shadow-lg md:h-[30rem] md:w-[24rem] md:hover:scale-105 transition-all">
             {/* Card Wrapper */}
             <div className="flex h-full flex-col items-center">
                 <div className="h-full w-full items-center">
                     <div className="relative h-36 w-full md:h-52">
                         <Image src='/images/projects/templateProjectPic.png'
                             fill={true}
-                            className=" object-cover rounded-t-2xl"
+                            alt={projectName}
+                            className=" object-cover rounded-t-2xl aspect-auto"
                         />
                     </div>
                     <div className="text-2xl my-2 text-black text-center">

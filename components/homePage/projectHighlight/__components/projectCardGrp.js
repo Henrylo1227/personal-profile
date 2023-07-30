@@ -11,7 +11,6 @@ export default function ProjectCardGrp({ cardList }) {
                         <ProjectCard card={card}/>
                     )}
                 </div>
-
             </div>
         </div>
 

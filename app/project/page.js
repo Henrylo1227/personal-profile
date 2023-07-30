@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Project () {
     return (
-        <div>
+        <div className='block h-screen w-screen items-center bg-gradient-to-b from-grey-light to-yellow-100 blur-xs'>
            Project 
         </div>
     );

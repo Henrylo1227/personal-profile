@@ -30,6 +30,7 @@ module.exports = {
         'dark-grey': '#323437',
         'purple-light': '#E09EFF',
         'purple-dark': '#9440FF',
+        'paper': '#FFF7EF',
       },
 
     }

@@ -25,7 +25,7 @@ export default function NavBtnGrp() {
     return (
         <div>
             {/* Menu button */}
-            <div className='flex items-center justify-center flex-col w-10 h-10 md:hidden' onClick={onExtendMenu}>
+            <div className='flex items-center justify-center flex-col w-10 h-10 md:hidden hover:bg-gray-700' onClick={onExtendMenu}>
                 <BiMenu/>
             </div>
 
@@ -34,13 +34,16 @@ export default function NavBtnGrp() {
                 <div className='fixed top-0 right-0 h-fit w-fit bg-dark-grey'>
                     {/* Close button*/}
                     <div className='flex items-center justify-end w-full' onClick={onCollapesMenu}>
-                        <div className='flex items-center justify-center h-10 w-10'>
+                        <div className='flex items-center justify-center h-10 w-10 hover:bg-gray-700'>
                         <RxCross1/>
                         </div>
                     </div>
                     {/* Menu List */}
                     <div className='flex h-full flex-col justify-between items-center pb-2' onClick={onCollapesMenu}>
-                        {navPageList.map((navPage)=><NavBtn linkRef={navPage.linkRef}>{navPage.navText}</NavBtn>)}
+                        {navPageList.map((navPage, index)=>
+                        <li key={index} className='list-none'>
+                            <NavBtn linkRef={navPage.linkRef}>{navPage.navText}</NavBtn>
+                         </li>)}
                     </div>
                 </div>
             </div>
@@ -48,7 +51,10 @@ export default function NavBtnGrp() {
             {/* Static nav buttons */}
             <div className='hidden md:flex'>
                 <div className='flex justify-between flex-row'>
-                    {navPageList.map((navPage)=><NavBtn linkRef={navPage.linkRef}>{navPage.navText}</NavBtn>)}
+                    {navPageList.map((navPage, index)=> 
+                        <li key={index} className='list-none'>
+                            <NavBtn linkRef={navPage.linkRef}>{navPage.navText}</NavBtn>
+                         </li>)}
                 </div>
             </div>
 

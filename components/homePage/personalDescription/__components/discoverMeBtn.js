@@ -4,7 +4,7 @@ import PrimaryBtn from "../../../primaryBtn";
 export default function DiscoverMeBtn() {
     return (
         <PrimaryBtn>
-            <Link href='#project-highlight' scroll={true} className="transition-all">Discover Me</Link>
+            <Link href='#project-highlight' scroll={true} >Discover Me</Link>
         </PrimaryBtn>
     );
 }
