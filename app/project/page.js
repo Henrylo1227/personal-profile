@@ -1,3 +1,4 @@
+import DashBoard from '@/components/projectPage/dashBoard';
 import React from 'react';
 
 export const metadata = {
@@ -8,7 +9,9 @@ export const metadata = {
 export default function Project () {
     return (
         <div className='block h-screen w-screen items-center bg-gradient-to-b from-grey-light to-yellow-100 blur-xs'>
-           Project 
+           {/* TODO: Dashboard */}
+           <DashBoard/>
+           {/* TODO: Project Cards */}
         </div>
     );
 };

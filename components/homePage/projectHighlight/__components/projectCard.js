@@ -1,10 +1,10 @@
-import PrimaryBtnSm from "@/components/primaryBtnSm";
+import PrimaryBtnSm from "@/components/common/primaryBtnSm";
 import Image from "next/image";
-import { Reem_Kufi, Mochiy_Pop_P_One, Mochiy_Pop_One } from "next/font/google";
+import { Reem_Kufi, Mochiy_Pop_One } from "next/font/google";
 import TechStackView from "./techStackView";
 
 const reemKufi = Reem_Kufi({subsets: ['latin'], weight: '400'})
-const mochiyPopPOne = Mochiy_Pop_One({subsets: ['latin'], weight: '400'})
+const mochiyPopOne = Mochiy_Pop_One({subsets: ['latin'], weight: '400'})
 
 export default function ProjectCard( {card} ) {
 
@@ -24,7 +24,7 @@ export default function ProjectCard( {card} ) {
                         />
                     </div>
                     <div className="text-2xl my-2 text-black text-center">
-                        <div className={mochiyPopPOne.className}>
+                        <div className={mochiyPopOne.className}>
                             {projectName}
                         </div>
                     </div>

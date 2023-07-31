@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PrimaryBtn from "../../../primaryBtn";
+import PrimaryBtn from "../../../common/primaryBtn";
 
 export default function DiscoverMeBtn() {
     return (

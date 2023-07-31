@@ -1,5 +1,5 @@
 'use client'
-import PrimaryBtn from '@/components/primaryBtn';
+import PrimaryBtn from '@/components/common/primaryBtn';
 import React from 'react';
 import { TfiEmail } from 'react-icons/tfi';
 import { Atma } from 'next/font/google';
