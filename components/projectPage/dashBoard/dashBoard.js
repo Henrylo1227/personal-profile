@@ -1,6 +1,7 @@
 import Description from "./description";
 import PieChart from "./pieChart";
 
+// TODO these should be fetch from the database
 const data = { 
     totalProjects: 3, 
     languageList: [
@@ -22,7 +23,7 @@ const colorList = [
 
 export default function DashBoard() {
     return (
-        <section className="flex relative top-[10%] left-[50%] -translate-x-[50%] w-[80%] h-fit bg-white drop-shadow-lg rounded-lg justify-between items-center md:left-[5%] md:-translate-x-0 md:flex-col md:w-fit md:p-4">
+        <section className="flex w-fit h-fit bg-white drop-shadow-lg rounded-lg justify-center items-center md:-translate-x-0 md:flex-col md:w-fit md:p-4">
             {/* Circle */}
             <div>
                 <PieChart data={data} colorList={colorList}></PieChart>

@@ -28,7 +28,7 @@ export default function ProjectCard( {card} ) {
                             {projectName}
                         </div>
                     </div>
-                    <div className="text-sm my-2 mx-4 italic md:mx-8">
+                    <div className="text-sm my-2 mx-4 text-grey italic md:mx-8">
                         <div className={reemKufi.className}>
                             {description}
                         </div>

@@ -28,7 +28,7 @@ export default function NavBtnGrp() {
     return (
         <div>
             {/* Menu button */}
-            <div className='flex items-center justify-center flex-col w-10 h-10 md:hidden hover:bg-gray-700' onClick={onExtendMenu}>
+            <div className='flex items-center justify-center flex-col w-10 h-10 mr-4 md:hidden hover:bg-gray-700' onClick={onExtendMenu}>
                 <BiMenu/>
             </div>
 
