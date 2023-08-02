@@ -23,11 +23,9 @@ export default function Footer() {
                     {externalLinks.map( (links) => {
                         const {imgSrc, url} = links;
                         return (
-                            <div className="relative h-5 w-5 mx-0.5 md:h-7 md:w-7 md:mx-3">
-                                <Link href={url}>
+                                <Link href={url} className="relative h-5 w-5 mx-0.5 md:h-7 md:w-7 md:mx-3">
                                     <Image src={imgSrc} fill={true}/> 
                                 </Link>
-                            </div>
                             )
                         })}
                 </div>

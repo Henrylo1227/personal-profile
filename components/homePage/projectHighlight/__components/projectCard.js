@@ -18,6 +18,7 @@ export default function ProjectCard( {card} ) {
                 <div className="h-full w-full items-center">
                     <div className="relative h-36 w-full md:h-52">
                         <Image src='/images/projects/templateProjectPic.png'
+                            priority={true}
                             fill={true}
                             alt={projectName}
                             className=" object-cover rounded-t-2xl aspect-auto"

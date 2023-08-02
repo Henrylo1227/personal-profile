@@ -4,7 +4,7 @@ import { getStyledIcon } from "./projectCard";
 export default function FocusProjectCard({card}) {
     if (card === undefined) 
         return (
-        <div className='block p-3 justify-center items-center bg-white w-[80%] h-[10vh] rounded-xl drop-shadow-lg text-black mb-[5%]'>
+        <div className='block p-3 justify-center items-center bg-white h-[10vh] w-[80vw] rounded-xl drop-shadow-lg text-black mb-[5%]'>
             <div className='flex justify-center flex-col'>
                 <span className='bg-grey w-[80%] self-center h-[0.5px] m-1'></span>
             </div>
@@ -17,7 +17,7 @@ export default function FocusProjectCard({card}) {
         );
     const {projectName, description, techStack, isCompleted, lastUpdateDate} = card;
     return (
-        <div className='block p-3 items-center bg-white w-[80%] h-max-[30vh] rounded-xl drop-shadow-lg text-black mb-[5%] hover:scale-105 transition-all'>
+        <div className='block p-3 items-center bg-white h-max-[30vh] w-[80vw] rounded-xl drop-shadow-lg text-black mb-[5%] hover:scale-105 transition-all'>
             <div className='flex justify-center items-center font-bold text-lg'>
                 {getStyledIcon(isCompleted)}
                 {projectName}
