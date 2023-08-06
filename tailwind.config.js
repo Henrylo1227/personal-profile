@@ -10,6 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        grid5: '2400px',
+        grid4: '2000px',
+        grid3: '1600px',
+        grid2: '1200px',
+      },
+
       textShadow: {
         xs: '0 0.5px 0.5px var(--tw-shadow-color)',
         sm: '0 1px 2px var(--tw-shadow-color)',

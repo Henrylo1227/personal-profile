@@ -42,8 +42,6 @@ export default function ProjectCard( {card} ) {
                 <PrimaryBtnSm>learn more</PrimaryBtnSm>
             </div>
             </div>
-
-
         </div>
     );
 }
