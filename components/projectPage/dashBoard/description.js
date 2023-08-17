@@ -6,9 +6,8 @@ export function getColorCodeFromLanguage(language) {
     const languageColorMap = projectPage.content.languageColorMap;
     for (let i = 0; i < languageColorMap.length; i++) {
         const {name, colorCode} = languageColorMap[i];
-        console.log(`${name} === ${language} ? ${name === language}`)
+        // console.log(`${name} === ${language} ? ${name === language}`)
         if (name === language) {
-            console.log(colorCode)
             return colorCode;
         }
     }

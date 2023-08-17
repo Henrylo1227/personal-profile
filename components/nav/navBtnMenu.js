@@ -3,19 +3,17 @@ import { BiMenu } from 'react-icons/bi';
 import { RxCross1 } from 'react-icons/rx';
 import NavBtn from './navBtn';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import axios from 'axios';
 
-const navPageList = [ 
-    {linkRef: '/project', navText: 'Project',},
-    {linkRef: '/about-me', navText: 'About Me',},
-    {linkRef: '/contact-me', navText: 'Contact Me',}];
+const navSettingURL = '/api/active-navlist';
 
-export default function NavBtnGrp() {
+export default function NavBtnMenu() {
 
     const [isExtendMenu, setIsExtendMenu] = useState(false);
     const pathname = usePathname();
-
+    const [navPageList, setNavPageList] = useState([]);
 
     const onExtendMenu = () => {
         setIsExtendMenu(true);
@@ -24,6 +22,24 @@ export default function NavBtnGrp() {
     const onCollapesMenu = () => {
         setIsExtendMenu(false);
     }
+
+    useEffect( () => {
+        async function getActivePageList(){
+            try{
+                const {data} = await axios({method: 'get', url: navSettingURL});
+                console.log(data);
+                setNavPageList(data);
+            } catch (error) {
+                console.error({error});
+                const navPageList = [ 
+                    {linkRef: '/project', navText: 'Project',},
+                    {linkRef: '/about-me', navText: 'About Me',},
+                    {linkRef: '/contact-me', navText: 'Contact Me',}];
+                setNavPageList(navPageList);
+            }
+        }
+        getActivePageList();
+    }, []);
 
     return (
         <div>

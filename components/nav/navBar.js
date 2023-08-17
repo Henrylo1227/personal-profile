@@ -1,4 +1,4 @@
-import NavBtnGrp from './navBtnGrp';
+import NavBtnMenu from './navBtnMenu';
 import NavHomeBtn from './navHomeBtn';
 
 export default function navBar () {
@@ -8,9 +8,8 @@ export default function navBar () {
                 <NavHomeBtn/>
             </div>
             <div>
-                <NavBtnGrp/>
+                <NavBtnMenu/>
             </div>
-            
         </div>
     );
 };

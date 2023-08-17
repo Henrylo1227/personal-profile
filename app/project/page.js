@@ -1,7 +1,7 @@
 import DashBoard from '@/components/projectPage/dashBoard/dashBoard';
 import ProjectCardGrpMobile from '@/components/projectPage/__components/mobileView/projectCardGrpMobile';
 import ProjectCardGrpDesktop from '@/components/projectPage/__components/desktopView/projectCardGrpDesktop';
-import projectPage from '../../pageData/projectPage.json';
+import projectPage from '@/pageData/projectPage.json';
 
 export const metadata = {
     title: 'Henry Lo | Projects',
