@@ -27,7 +27,6 @@ export default function NavBtnMenu() {
         async function getActivePageList(){
             try{
                 const {data} = await axios({method: 'get', url: navSettingURL});
-                console.log(data);
                 setNavPageList(data);
             } catch (error) {
                 console.error({error});

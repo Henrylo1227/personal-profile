@@ -8,7 +8,7 @@ const databaseTimeoutMs = process.env.LOCAL_DB_TIMEOUT_MS;
 
 // admin operation with database
 // general management
-async function getGeneralSetting(){
+export async function getGeneralSetting(){
     try {
         await mongoose.connect(url, { serverSelectionTimeoutMS: databaseTimeoutMs});
         //operation
@@ -21,7 +21,7 @@ async function getGeneralSetting(){
     }
 }
 
-async function updateGeneralSetting(setting){
+export async function updateGeneralSetting(setting){
     try {
         const {pageManagement, footer} = setting;
         await mongoose.connect(url, { serverSelectionTimeoutMS: databaseTimeoutMs});
@@ -45,9 +45,43 @@ async function updateGeneralSetting(setting){
 }
 
 // project management
-async function insertAProject(projectDetails) {
+export async function getAllProjectBrief() {
+    // return a list of project ids and project names
+    try {
+        await mongoose.connect(url, {serverSelectionTimeoutMS: databaseTimeoutMs});
+        const response = await ProjectDetailsModel.aggregate([
+            {$project: {_id: 1 , "projectInfo.projectName": 1}},
+        ]);
+        const projectBriefList = []
+        response.forEach( project => {
+            projectBriefList.push({projectId: project._id, projectName: project.projectInfo.projectName})
+        });
+        return projectBriefList;
+    } catch (error) {
+        console.error({error});
+    } finally {
+        await mongoose.disconnect();
+    }
+}
+
+export async function getProjectDetails(projectId){
+    // return a project detail profile with all properties of the project using the projectId.
+    try {
+        await mongoose.connect(url, {serverSelectionTimeoutMS: databaseTimeoutMs});
+        const response = await ProjectDetailsModel.findById(projectId).exec();
+        return response;
+    } catch (error) {
+        console.error({error});
+    } finally {
+        await mongoose.disconnect();
+    }
+}
+
+
+export async function createNewProject(projectDetails) {
     try{
-        const { projectName, description, techStack, isCompleted, lastUpdateDate, paragraph } = projectDetails;
+        const {projectInfo, paragraph} = projectDetails;
+        const { projectName, description, techStack, isCompleted, lastUpdateDate } = projectInfo;
         await mongoose.connect(url, { serverSelectionTimeoutMS: databaseTimeoutMs});
         //operation
         await ProjectDetailsModel.create({
@@ -67,4 +101,27 @@ async function insertAProject(projectDetails) {
     }
 }
 
-module.exports = { getGeneralSetting, updateGeneralSetting }
+export async function updateProject(projectId, newProjectDetail) {
+    try {
+        const { projectInfo, paragraph } = newProjectDetail;
+        const { projectName, description, techStack, isCompleted, lastUpdateDate } = projectInfo;
+        await mongoose.connect(url, { serverSelectionTimeoutMS: databaseTimeoutMs});
+        //operation
+        const projectDoc = await ProjectDetailsModel.findById(projectId).exec();
+        projectDoc.projectInfo = {
+            projectName: projectName,
+            description: description,
+            techStack: techStack,
+            isCompleted: isCompleted,
+            lastUpdateDate: lastUpdateDate,
+        };
+        projectDoc.paragraph = paragraph;
+
+        await projectDoc.save();
+    } catch (error) {
+        console.error({error});
+    } finally {
+        await mongoose.disconnect(); 
+    }
+}
+

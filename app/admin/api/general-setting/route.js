@@ -14,14 +14,15 @@ export async function GET() {
 
 export async function POST(request) {
     try{
-        const {generalSetting} = await request.json();
-        await updateGeneralSetting(generalSetting);
+        const {body} = await request.json();
+        await updateGeneralSetting(body);
         try{
-            const {pageManagement} = generalSetting;
+            const {pageManagement} = body;
             const navPageList = convertPageManagementToNavPageList(pageManagement);
             await updateLocalStaticNavbarConfig(navPageList)
         } catch (error) {
             console.error({error});
+            return NextResponse.json({status: 500});
         }
         return NextResponse.json({status: 200});
     } catch (error) {

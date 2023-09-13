@@ -26,27 +26,27 @@ const ContactMe = () => {
             <div className='flex text-black flex-col relative top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] h-fit w-[80%] bg-paper shadow-md rounded-xl md:w-[60%] lg:w-[40%]'>
                 <div className={atma.className}>
                 {/* Heading */}
-                    <h1 className='text-center mt-3 text-2xl font-bold md:text-4xl'>Reach Out</h1>
-                    <form className='display flex flex-col m-5 md:m-20' onSubmit={handleSubmit}>
+                    <h1 className='text-center mt-3 text-2xl font-bold md:text-3xl'>Reach Out</h1>
+                    <form className='display flex flex-col m-5 md:m-20 md:mt-5' onSubmit={handleSubmit}>
                         {/* Name Text Input*/}
                         <div className='flex'>
                             <div className='flex flex-col'>
-                                <label className='block text-xl md:text-2xl'>First Name:</label>
-                                <input className='w-[80%] mr-3 px-2 py-1 md:text-2xl' type='text' id='first-name' name='first-name' required/>
+                                <label className='block text-xl md:text-xl'>First Name:</label>
+                                <input className='w-[80%] mr-3 px-2 py-1 md:text-xl' type='text' id='first-name' name='first-name' required/>
                             </div>
                             <div className='flex flex-col'>
-                                <label className='block text-xl md:text-2xl'>Last Name:</label>
-                                <input className='w-[80%] px-2 py-1 md:text-2xl' type='text' id='last-name' name='last-name' required/>
+                                <label className='block text-xl md:text-xl'>Last Name:</label>
+                                <input className='w-[80%] px-2 py-1 md:text-xl' type='text' id='last-name' name='last-name' required/>
                             </div>
                         </div>
 
                         {/* Email Text Input */}
-                        <label className='mt-2 text-xl md:text-2xl md:mt-4'>Email:</label>
-                        <input className='px-2 py-1 md:text-2xl' type='email' id='email' name='email' required/>
+                        <label className='mt-2 text-xl md:text-xl md:mt-4'>Email:</label>
+                        <input className='px-2 py-1 md:text-xl' type='email' id='email' name='email' required/>
 
                         {/* Message Text Input */}
-                        <label className='mt-2 text-xl md:text-2xl md:mt-4'>Message:</label>
-                        <textarea className='px-2 py-1 md:text-2xl h-16 md:h-32' type='text' id='message' name='message' required/>
+                        <label className='mt-2 text-xl md:text-xl md:mt-4'>Message:</label>
+                        <textarea className='px-2 py-1 md:text-xl h-16 md:h-32' type='text' id='message' name='message' required/>
                         
                         {/* Send button */}
                         <div className=' self-end mt-2 md:mt-10'>
