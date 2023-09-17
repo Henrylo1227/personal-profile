@@ -11,7 +11,8 @@ export default function AdminTechStack({techList, onRemove}) {
             {techList.map( (e, index) => {
                 const {tech, colorCode} = e;
                 return(
-                    <div className={`flex mx-1 my-1 p-1 w-fit bg-white rounded-lg text-xs text-black justify-center items-center border-[2px]`}>
+                    <div className={`flex mx-1 my-1 p-1 w-fit bg-white rounded-lg text-xs text-black justify-center items-center border-[2px]`}
+                        key={index}>
                         <div className={`rounded-full h-2 w-2 border mr-1`}
                             style={{backgroundColor: `${colorCode}`}}
                         ></div>

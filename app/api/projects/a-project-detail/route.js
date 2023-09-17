@@ -1,5 +1,6 @@
-import { getProjectDetails, createNewProject, updateProject } from "@/database/connection/dbConnectionLocal";
+import { getProjectDetails, createNewProject, updateProject, removeProject } from "@/database/connection/dbConnectionLocal";
 import { NextResponse } from "next/server";
+
 
 
 export async function GET (request) {
@@ -20,13 +21,11 @@ export async function PUT (request) {
     // update or create new new project
     try {
         const body = await request.json();
-        
-        console.log('processing');
         if (body._id != undefined) {
             const {_id, projectInfo, paragraph } = body;
             const projectDetail = {
-                projectInfo: projectInfo,
-                paragraph: paragraph,
+                "projectInfo": projectInfo,
+                "paragraph": paragraph,
             }
             // update existing project
             await updateProject(_id, projectDetail);
@@ -45,4 +44,17 @@ export async function PUT (request) {
         console.error({error});
         return NextResponse.json({status: 500});
     }
+}
+
+export async function DELETE (request) {
+    // delete existing project
+    try {
+        const body = await request.json();
+        await removeProject(body.projectId);
+        return NextResponse.json({status: 200});
+    } catch (error){
+        console.error({error});
+        return NextResponse.json({status: 500});
+    }
+
 }

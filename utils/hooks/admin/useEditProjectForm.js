@@ -35,7 +35,17 @@ export default function useEditProjectForm(focusProject) {
         setParagraph(paragraph);
     }
 
+    function updateFocusProject() {
+        setProjectId(focusProject.projectInfo._id);
+        setProjectName(focusProject.projectInfo.projectName);
+        setDescription(focusProject.projectInfo.description);
+        setIsCompleted(focusProject.projectInfo.isCompleted);
+        setTechStack(focusProject.projectInfo.techStack);
+        setParagraph(focusProject.paragraph);
+    }
+
     const setEditProjectForm = {
+        updateFocusProject,
         updateProjectName,
         updateDescription,
         updateIsCompleted,

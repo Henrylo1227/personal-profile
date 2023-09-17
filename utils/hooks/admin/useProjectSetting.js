@@ -18,6 +18,7 @@ export default function useProjectSetting () {
                     method: 'get',
                     url: projectListAPI,
                 });
+                console.log({data});
                 setProjectList(data);
             } catch (error) {
                 console.error({error});
@@ -38,14 +39,13 @@ export default function useProjectSetting () {
                         }
                     });
                     setCurrentFocusProject(data);
-                    console.log(data);
                     setIsPromptSelectTask(false);
                 } catch (error) {
                     console.error({error});
                 }
             }
         }
-        loadCurrentFocusProject(currentFocusProjectId);
+            loadCurrentFocusProject(currentFocusProjectId);
     }, [currentFocusProjectId])
 
     function onProjectFocus(projectId){

@@ -54,7 +54,8 @@ export async function getAllProjectBrief() {
         ]);
         const projectBriefList = []
         response.forEach( project => {
-            projectBriefList.push({projectId: project._id, projectName: project.projectInfo.projectName})
+            const idStr = project._id.toString();
+            projectBriefList.push({projectId: idStr, projectName: project.projectInfo.projectName})
         });
         return projectBriefList;
     } catch (error) {
@@ -68,7 +69,9 @@ export async function getProjectDetails(projectId){
     // return a project detail profile with all properties of the project using the projectId.
     try {
         await mongoose.connect(url, {serverSelectionTimeoutMS: databaseTimeoutMs});
-        const response = await ProjectDetailsModel.findById(projectId).exec();
+        const projectDetails = await ProjectDetailsModel.findById(projectId).exec(); //todo
+        const response = projectDetails
+        response.projectInfo._id = projectId;
         return response;
     } catch (error) {
         console.error({error});
@@ -125,3 +128,14 @@ export async function updateProject(projectId, newProjectDetail) {
     }
 }
 
+export async function removeProject(projectId) {
+    try {
+        // operation
+        await mongoose.connect(url, {serverSelectionTimeoutMS: databaseTimeoutMs});
+        await ProjectDetailsModel.deleteOne({_id: projectId});
+    } catch (error) {
+        console.error({error});
+    } finally {
+        await mongoose.disconnect();
+    }
+}

@@ -18,18 +18,3 @@ export default function Admin() {
         </section>
     );
 }
-/* todo: make a admin page for modify data to the site
-
-    settings page:
-        -> general management:
-            - nav bar setting
-                > toggle page
-            - edit footer
-        -> Projects Management:
-            - select highligted projects (displayed in home page)
-            - add new projects
-            - remove projects
-        -> About Me Management:
-            - Edit content of the blog
-            - Add/Remove Images to the page
-*/
