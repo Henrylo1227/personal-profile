@@ -1,0 +1,35 @@
+{
+    "pageName": "home",
+    "content": {
+        "description": {
+            "heading": "Henry LO",
+            "subHeading": "Graduate Developer",
+            "text": "Interested in both front-end and back-end development. Also, Machine Learning and AI!"
+        },
+
+        "projectHighlight": {
+            "heading": "Project Highlight",
+            "subHeading": "Check out all of my projects here!",
+            "projectCards": [
+                {   "projectName": "Profile Project",
+                    "description": "A nice web-base profile site which support responsive design",
+                    "techStack": ["Next.Js", "TailwindCSS"],
+                    "isCompleted": false,
+                    "lastUpdateDate": "26/7/2023"
+                },
+                {   "projectName": "To-do-list Project (React)",
+                    "description": "A small attempt to React library, building the front-end of the application",
+                    "techStack": ["React.Js"],
+                    "isCompleted": true,
+                    "lastUpdateDate": "20/7/2023"
+                },
+                {   "projectName": "To-do-list Project",
+                    "description": "A full stack application, including a server-side database and a Bootstrap front-end",
+                    "techStack": ["JavaScript", "HTML", "Bootstrap", "express.js"],
+                    "isCompleted": true,
+                    "lastUpdateDate": "26/6/2023"
+                }
+            ]
+        }
+    }
+}

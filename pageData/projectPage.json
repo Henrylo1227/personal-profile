@@ -1,0 +1,43 @@
+{
+    "pageName": "project",
+    "content": {
+        "dashboard": {
+            "data": {
+                "totalProjects": 3,
+                "languageList": [
+                    { "name": "Java", "percentage": 0.35 },
+                    { "name": "JavaScript", "percentage": 0.27 },
+                    { "name": "Python" , "percentage": 0.14 },
+                    { "name": "C#", "percentage": 0.24 }
+                ]
+            }
+        },
+        "languageColorMap": [
+            { "name": "Java", "colorCode": "#FF1E1E"  },
+            { "name": "JavaScript", "colorCode": "#FFFF00" },
+            { "name": "Python" ,"colorCode": "#00C4FF" },
+            { "name": "C#", "colorCode": "#1F8A70"},
+            { "name": "C++", "colorCode": "068FFF"}
+        ],
+        "cardList": [
+        {   "projectName": "Profile Project",
+            "description": "A nice web-base profile site which support responsive design",
+            "techStack": ["JavaScript"],
+            "isCompleted": false,
+            "lastUpdateDate": "26/7/2023"
+        },
+        {   "projectName": "To-do-list Project (React)",
+            "description": "A small attempt to React library, building the front-end of the application",
+            "techStack": ["JavaScript"],
+            "isCompleted": true,
+            "lastUpdateDate": "20/7/2023"
+        },
+        {   "projectName": "To-do-list Project",
+            "description": "A full stack application, including a server-side database and a Bootstrap front-end",
+            "techStack": ["JavaScript"],
+            "isCompleted": true,
+            "lastUpdateDate": "26/6/2023"
+        }
+    ]
+    }
+}

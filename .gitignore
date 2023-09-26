@@ -25,7 +25,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # page contnet text
-/pageData
 
 # local env files
 .env*.local

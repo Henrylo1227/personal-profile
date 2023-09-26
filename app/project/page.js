@@ -5,7 +5,7 @@ import ProjectCardGrpDesktop from '@/components/projectPage/__components/desktop
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const metadata = {
+const metadata = {
     title: 'Henry Lo | Projects',
     description: 'The projects that I have completed',
 }
