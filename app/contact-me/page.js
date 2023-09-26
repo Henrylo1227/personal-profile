@@ -6,7 +6,7 @@ import { Atma } from 'next/font/google';
 
 const atma = Atma({subsets:['latin'], weight:'300'});
 
-export const metadata = {
+const metadata = {
     title: 'Henry Lo | Contact Me',
     description: 'Reach out and contact Henry',
 }
