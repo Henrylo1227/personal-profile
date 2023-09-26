@@ -5,6 +5,20 @@ const { GeneralSettingModel} = require('../model/setting');
 
 const url = process.env.LOCAL_DB_URL;
 const databaseTimeoutMs = process.env.LOCAL_DB_TIMEOUT_MS;
+// normal user data fetching
+export async function getAllProject(){
+    try {
+        await mongoose.connect(url, {serverSelectionTimeoutMS: databaseTimeoutMs});
+        // operation
+        const response = await ProjectDetailsModel.find({});
+        return response;
+    } catch (error) {
+        console.error({error});
+    } finally {
+        await mongoose.disconnect();
+    }
+}
+
 
 // admin operation with database
 // general management
